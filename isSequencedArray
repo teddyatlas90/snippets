@@ -1,0 +1,25 @@
+function isSequencedArray(arrOrginal, s, e) {
+  let arr = []
+  arrOrginal.map((a) => {
+    for (i = 0; i < arrOrginal.length; i++) {
+      if (arrOrginal.includes(a) && !arr.includes(a)) {
+        arr.push(a)
+      }
+    }
+  })
+  if (arr[0] == s && arr[arr.length - 1] == e) {
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] == (arr[i + 1] - 1)) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+  } else{
+    return 0
+  }
+}
+
+console.log(isSequencedArray([1, 2, 3, 4, 5], 1, 5))
+console.log(isSequencedArray([-5, -5, -4, -4, -4, -3, -3, -2, -2, -2], -5, -2))
+console.log(isSequencedArray([5, 4, 3, 2, 1], 1, 5))
