@@ -1,0 +1,16 @@
+function checkConcatinatedSum(num, n) {
+  var sum = 0
+  var arr = String(num).split('')
+  for (j = 0; j < arr.length; j++) {
+    var temp=''
+    for (i = 0; i < n; i++) {
+      temp+=arr[j]
+    }
+    sum+=parseInt(temp)
+  }
+  return sum==num
+}
+
+console.log(checkConcatinatedSum(198, 2))
+console.log(checkConcatinatedSum(2997,3))
+console.log(checkConcatinatedSum(9,1))
