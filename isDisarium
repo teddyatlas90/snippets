@@ -1,0 +1,11 @@
+function isDisarium(num){
+let arr = String(num).split('')
+let sum = 0
+arr.map((a,index)=>{
+ sum += Math.pow(Number(a),index+1)
+})
+return sum==num
+}
+
+console.log(isDisarium(518))
+console.log(isDisarium(135))
